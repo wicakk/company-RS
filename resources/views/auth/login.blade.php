@@ -66,7 +66,7 @@
                         @endif
                     </div>
                     <div class="relative">
-                        :type="show ? 'text' : 'password'"
+                        
                         <input :type="show ? 'text' : 'password'" name="password" required
                                class="w-full px-4 py-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm pr-12"
                                placeholder="••••••••">
