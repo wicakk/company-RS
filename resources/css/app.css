@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   ADMIN SIDEBAR MENU STYLES (dari layout yang diupload)
+   ============================================================ */
+@layer components {
+    .menu-item {
+        @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer;
+    }
+    .menu-item-active {
+        @apply bg-brand-50 dark:bg-brand-500/10 text-brand-500;
+    }
+    .menu-item-inactive {
+        @apply text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/[0.05] hover:text-gray-900 dark:hover:text-white;
+    }
+    .menu-item-icon-active {
+        @apply text-brand-500;
+    }
+    .menu-item-icon-inactive {
+        @apply text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300;
+    }
+    .menu-item-text {
+        @apply font-medium;
+    }
+
+    /* Submenu dropdown */
+    .menu-dropdown-item {
+        @apply flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors duration-150;
+    }
+    .menu-dropdown-item-active {
+        @apply text-brand-500 font-medium;
+    }
+    .menu-dropdown-item-inactive {
+        @apply text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white;
+    }
+
+    /* Badges */
+    .menu-dropdown-badge {
+        @apply text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide;
+    }
+    .menu-dropdown-badge-active {
+        @apply bg-brand-500/10 text-brand-500;
+    }
+    .menu-dropdown-badge-inactive {
+        @apply bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400;
+    }
+    .menu-dropdown-badge-pro {
+        @apply text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide;
+    }
+    .menu-dropdown-badge-pro-active {
+        @apply bg-brand-500 text-white;
+    }
+    .menu-dropdown-badge-pro-inactive {
+        @apply bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300;
+    }
+
+    /* ── PUBLIC SITE ────────────────────────────────── */
+    .gradient-text {
+        background: linear-gradient(135deg, #1d77e8 0%, #60b5f7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .hero-gradient {
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #1d77e8 100%);
+    }
+    .card-hover {
+        @apply transition-all duration-300;
+    }
+    .card-hover:hover {
+        @apply -translate-y-1 shadow-xl;
+    }
+    .nav-link { @apply relative; }
+    .nav-link::after {
+        content: '';
+        @apply absolute bottom-[-2px] left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after { @apply w-full; }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-all text-sm;
+    }
+    .btn-secondary {
+        @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold rounded-xl transition-all text-sm;
+    }
+}
+
+@layer base {
+    html { scroll-behavior: smooth; }
+    [x-cloak] { display: none !important; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { @apply bg-gray-100 dark:bg-gray-900; }
+    ::-webkit-scrollbar-thumb { @apply bg-brand-400 rounded-full; }
+}
+
+@layer utilities {
+    .line-clamp-1 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+    .line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+    .line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+}
