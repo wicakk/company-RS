@@ -67,7 +67,7 @@
                     </div>
                     <div class="relative">
                         
-                        <input name="password" required
+                        <input :type="show ? 'text' : 'password'" name="password" required
                                class="w-full px-4 py-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm pr-12"
                                placeholder="••••••••">
                         <button type="button" @click="show = !show" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors">

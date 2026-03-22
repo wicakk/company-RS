@@ -174,7 +174,7 @@ class DatabaseSeeder extends Seeder
         Contact::create(['name'=>'Andi Pratama','email'=>'andi@email.com','phone'=>'08222333444','subject'=>'Kritik Pelayanan','message'=>'Saya ingin memberikan masukan terkait pelayanan di loket pendaftaran yang antrenya sangat panjang.','status'=>'read']);
 
         $this->command->info('✅ Database seeded successfully!');
-        $this->command->info('📧 Admin: admin@rsmedika.com / password');
-        $this->command->info('📧 User:  user@rsmedika.com / password');
+        $this->command->info('📧 Admin: admin@company.com / password');
+        $this->command->info('📧 User:  user@company.com / password');
     }
 }
