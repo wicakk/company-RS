@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Public\{HomeController, AboutController, ServiceController, DoctorController, ArticleController, EducationController, ContactController};
 use App\Http\Controllers\Admin\{DashboardController, ArticleController as AdminArticleController, ServiceController as AdminServiceController, DoctorController as AdminDoctorController, ScheduleController, UserController, ContactController as AdminContactController, EducationController as AdminEducationController};
 use App\Http\Controllers\Auth\{UserDashboardController};
+use App\Http\Controllers\Admin\HeroSliderController;
+use App\Http\Controllers\Admin\SiteSettingController;
 
 // =====================
 // PUBLIC ROUTES
@@ -84,4 +86,22 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+    // Hero Sliders
+    Route::get   ('hero-sliders',                [HeroSliderController::class, 'index'])  ->name('hero-sliders.index');
+    Route::post  ('hero-sliders',                [HeroSliderController::class, 'store'])  ->name('hero-sliders.store');
+    Route::put   ('hero-sliders/{heroSlider}',   [HeroSliderController::class, 'update']) ->name('hero-sliders.update');
+    Route::delete('hero-sliders/{heroSlider}',   [HeroSliderController::class, 'destroy'])->name('hero-sliders.destroy');
+
+    // Toggle aktif / nonaktif
+    Route::patch('hero-sliders/{heroSlider}/toggle',  [HeroSliderController::class, 'toggle']) ->name('hero-sliders.toggle');
+
+    // Naik / turun urutan
+    Route::patch('hero-sliders/{heroSlider}/reorder', [HeroSliderController::class, 'reorder'])->name('hero-sliders.reorder');
+
+    // Site Settings (logo, footer, kontak, sosmed)
+    Route::get   ('site-settings',          [SiteSettingController::class, 'index'])       ->name('site-settings.index');
+    Route::put   ('site-settings',          [SiteSettingController::class, 'update'])       ->name('site-settings.update');
+    Route::delete('site-settings/logo',     [SiteSettingController::class, 'deleteLogo'])   ->name('site-settings.delete-logo');
+    Route::delete('site-settings/favicon',  [SiteSettingController::class, 'deleteFavicon'])->name('site-settings.delete-favicon');
 });

@@ -76,7 +76,7 @@
                     @endforeach
                 </div>
                 <div class="grid sm:grid-cols-2 gap-5">
-                    @foreach([['phone','No. Telepon','tel','08xx-xxxx-xxxx',false],['subject','Subjek','text','Perihal pesan Anda',true]] as $f)
+                    @foreach([['phone','No. WhatsApp','tel','08xx-xxxx-xxxx',false],['subject','Tujuan','text','Perihal pesan Anda',true]] as $f)
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">{{ $f[1] }} @if($f[4])<span class="text-red-500">*</span>@endif</label>
                         <input type="{{ $f[2] }}" name="{{ $f[0] }}" value="{{ old($f[0]) }}" {{ $f[4] ? 'required':'' }}
@@ -87,7 +87,7 @@
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Pesan <span class="text-red-500">*</span></label>
-                    <textarea name="message" rows="5" required
+                    <textarea name="message" rows="10" required
                               class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400 outline-none transition-all text-sm resize-none"
                               placeholder="Tuliskan pesan Anda...">{{ old('message') }}</textarea>
                 </div>

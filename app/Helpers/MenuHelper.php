@@ -104,6 +104,16 @@ class MenuHelper
                         'path' => '/admin/users',
                     ],
                     [
+                        'name' => 'Manajemen Rumah sakit',
+                        'icon' => 'users',
+                        'path' => '/admin/site-settings',
+                    ],
+                    [
+                        'name' => 'Manajemen slider',
+                        'icon' => 'users',
+                        'path' => '/admin/site-settings',
+                    ],
+                    [
                         'name' => 'Lihat Website',
                         'icon' => 'external-link',
                         'path' => '/',

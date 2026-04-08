@@ -5,6 +5,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\View;
+use App\Models\SiteSetting;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,5 +17,13 @@ class AppServiceProvider extends ServiceProvider
         // Custom Tailwind pagination
         Paginator::defaultView('vendor.pagination.tailwind');
         Paginator::defaultSimpleView('vendor.pagination.simple-tailwind');
+        View::composer('*', function ($view) {
+            // Cache ringan: hanya 1x query per request
+            static $settings = null;
+            if ($settings === null) {
+                $settings = SiteSetting::instance();
+            }
+            $view->with('siteSettings', $settings);
+        });
     }
 }

@@ -3,13 +3,13 @@
 @section('content')
 
 {{-- ── HERO ── --}}
-<section class="relative overflow-hidden">
+{{-- <section class="relative overflow-hidden">
     <div class="hero-gradient min-h-[90vh] flex items-center relative">
         <div class="absolute top-20 right-20 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-20 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                {{-- Left --}}
+               
                 <div class="text-white animate-fade-in-up">
                     <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-xs font-semibold px-4 py-2 rounded-full mb-8">
                         <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -32,7 +32,7 @@
                             Hubungi Kami
                         </a>
                     </div>
-                    {{-- Stats --}}
+         
                     <div class="flex flex-wrap gap-8 mt-14 pt-10 border-t border-white/20">
                         @foreach([
                             [$stats['doctors'].'+'  , 'Dokter Spesialis'],
@@ -48,7 +48,7 @@
                     </div>
                 </div>
 
-                {{-- Right Card --}}
+           
                 <div class="hidden lg:block">
                     <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-white">
                         <div class="flex items-center gap-4 mb-6">
@@ -97,7 +97,9 @@
             <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H0Z" class="fill-white dark:fill-slate-950"/>
         </svg>
     </div>
-</section>
+</section> --}}
+
+ @include('components.hero-slider', ['slides' => $heroSlides])
 
 {{-- ── ANNOUNCEMENTS ── --}}
 @if($announcements->isNotEmpty())
